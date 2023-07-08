@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
+@extends('layout.app')
 
-<head>
-    <title>Halaman Form</title>
-    <!-- Menambahkan link CSS Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
+@section('content')
 
 <body>
     <div class="container">
@@ -33,11 +28,10 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <br>
-        <a href="/tasks9" class="btn btn-warning">KEMBALI KE HOME</a>
+        <a href="/tasks10" class="btn btn-warning">KEMBALI KE HOME</a>
     </div>
 
     <!-- Menambahkan script Bootstrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-
-</html>
+@endsection

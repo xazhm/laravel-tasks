@@ -1,13 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('hello');
 });
 
 Route::get('/tasks9', function () {
-    return view('home');
+   return view('hello');
+});
+
+Route::get('/tasks10', function () {
+    $submissions = App\Models\User::all();
+    return view('home', compact('submissions'));
 });
 
 Route::get('/table', function () {
@@ -38,8 +44,9 @@ Route::delete('/delete/{id}', function ($id) {
     return redirect('/table');
 });
 
+Route::get('/info/{id}', [UserController::class, 'info']);
+Route::get('/update/{id}', [UserController::class, 'edit']);
+Route::put('/update/{id}', [UserController::class, 'update']);
 
-Route::get('/tasks9', function () {
-    $submissions = App\Models\User::all();
-    return view('home', compact('submissions'));
-});
+Route::get('/confirm-delete/{id}', [UserController::class, 'confirmDelete'])->name('confirm-delete');
+Route::delete('/confirm-delete/{id}', [UserController::class, 'deleteConfirm'])->name('delete-confirm');
